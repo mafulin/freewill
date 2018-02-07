@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/one_tx"
+        android:text="一"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/two_tx"
+        android:text="二"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/three_tx"
+        android:text="三"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/four_tx"
+        android:text="四"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/five_tx"
+        android:text="五"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/six_tx"
+        android:text="六"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/seven_tx"
+        android:text="七"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/eight_tx"
+        android:text="八"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/nine_tx"
+        android:text="九"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/progress_tx"
+        android:text="十"
+        android:textSize="24sp"
+        android:onClick="click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/progress_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一阶段"/>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/100"/>
+
+        <TextView
+            android:id="@+id/up1"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55999999"
+            android:onClick="up"
+            android:text="+"/>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pb1"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第二阶段"/>
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/300"/>
+
+        <TextView
+            android:id="@+id/up2"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55999999"
+            android:onClick="up"
+            android:text="+"/>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pb2"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="300"
+        android:progress="0"/>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第三阶段"/>
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/1000"/>
+
+        <TextView
+            android:id="@+id/up3"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55999999"
+            android:onClick="up"
+            android:text="+"/>
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/pb3"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="1000"
+        android:progress="0"/>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第四阶段"/>
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/3000"/>
+
+        <TextView
+            android:id="@+id/up4"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#55999999"
+            android:onClick="up"
+            android:text="+"/>
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/pb4"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="3000"
+        android:progress="0"/>
+    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

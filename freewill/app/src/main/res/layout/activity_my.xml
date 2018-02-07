@@ -1,0 +1,200 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="昵称"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="撄宁"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="累计"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="01:23:45"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="占比"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="10%"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="程度"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="1秒/次"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="天数"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="10天"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="累计"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="01:23:45"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:background="#44ffffff"
+                    android:text="累计"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:background="#22ffffff"
+                    android:text="01:23:45"
+                    android:onClick="click"
+                    android:textColor="#88ffffff"
+                    android:gravity="center"
+                    android:textSize="21dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

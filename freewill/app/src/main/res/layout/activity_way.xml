@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="#000000"
+    android:orientation="vertical">
+    <ScrollView 
+         android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+	<LinearLayout
+		android:background="#000000"
+	    android:id="@+id/root"
+	    android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+		<TextView
+			android:textColor="#88ffffff"
+		    android:id="@+id/textview"
+	    	android:layout_width="match_parent"
+        	android:layout_height="match_parent"/>
+</LinearLayout>
+</ScrollView>
+</RelativeLayout>

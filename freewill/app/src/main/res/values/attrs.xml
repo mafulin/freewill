@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="way">
+        <item >静观法</item>
+        <item >梦观法</item>
+        <item >张三丰内丹36诀----精简版</item>
+        <item >意识播种发酵法</item>
+    </string-array>
+    <string-array name="article">
+        <item >修道经验</item>
+        <item > 1. 我的灵修经验----人的多次元复合体结构</item>
+        <item > 2. 我的出神经验----肉体也是一种光体</item>
+        <item > 3. 我的出神经验----人有多少个灵</item>
+        <item > 4. 我的出神经验----人能出多少神</item>
+        <item > 5. 我的出神经验----出神的顺序</item>
+        <item > 6. 我的修道经验----东西结合的主要原因</item>
+        <item > 7. 我的出神经验----界的连续性与相互验证</item>
+        <item > 8. 我的出神经验----出神到各界对我人生的影响</item>
+        <item > 9. 我的出神经验----外灵攻击与自我防护</item>
+        <item >10.我的出神经验----单意识焦点与多意识焦点</item>
+        <item >11. 我的修道经验----能量的“消耗”与转换</item>
+        <item >12. 我的出神经验----个体现象界与集体现象界</item>
+        <item >13. 我的出神经验----空间也是一种生物</item>
+        <item >14. 我的出神经验----"平行我"的发现</item>
+        <item >15. 我的修道经验----灵界特点和破幻要点</item>
+        <item >16. 我的出神经验----界的现象与真相</item>
+        <item >17. 最早的得道者</item>
+        <item >18. 修道之心障</item>
+        <item >19. 修道的心障之一：我正他邪</item>
+        <item >20. 修道的心障之二：舍简求繁</item>
+        <item >21.  修行目的：白马和黑马</item>
+        <item >22.  怎么样才算是修炼得道？</item>
+        <item >23.  道、求道、万法归一、现实性、透明性</item>
+        <item >24.  终极真相----万物本源的描述</item>
+        <item >25.  终极真相----万物本源的别名</item>
+        <item >26.  终极真相----本源与个体的关系</item>
+        <item >26.  终极真相----所有问题的答案</item>
+        <item >修道方法</item>
+        <item > 1. 我的修道经验----我最常用的几种方法（前言）</item>
+        <item > 2. 我的修道经验----我最常用的几种方法（正文）</item>
+        <item > 3. 《光环法》----肉眼观察灵体的方法</item>
+        <item > 4. “克里安照相术”----以太体的科学观察</item>
+        <item > 5. 《合一经》----灵修技术经典</item>
+        <item > 6. 《合一经》----合神法的流程</item>
+        <item > 7. 《心经》----白话版（梵语直译）</item>
+        <item > 8. 合一之道----《老子丹道內观法》</item>
+        <item >9. 合一之道----《老子丹道21诀》</item>
+        <item >10. 老子丹道----《太上老君说了心经》</item>
+        <item >11. 老子丹道----《太上老君內观经》</item>
+        <item >12. 老子丹道----《老君西升经》</item>
+        <item >13. 张三丰丹道----《张三丰内丹36诀----精简版》</item>
+        <item >14. 张三丰丹道----《张三丰内丹36诀----全文版》</item>
+        <item >15. 藏密无上瑜伽--《梦观成就法》</item>
+        <item >16. 藏密无上瑜珈----身外化身法</item>
+        <item >17. 藏密无上瑜珈----神识出游法</item>
+        <item >18. 藏密中脉修法</item>
+        <item >19. 脉轮及能量提升</item>
+        <item >20. 三脉七轮位置图</item>
+        <item >21. 中脉脉轮与任督脉关系图</item>
+        <item >22. 丹田和任督脉图</item>
+        <item >23. 《道德经》与元神修炼</item>
+        <item >参考资料</item>
+        <item > 1. 《道德经》</item>
+        <item > 2. 《天符经》</item>
+        <item > 3. 《金刚经》</item>
+        <item > 4. 修道教材列举</item>
+    </string-array>
+    <string-array name="plan">
+        <item >6:00-7:00</item>
+        <item >7:00-8:00</item>
+        <item >8:00-9:00</item>
+        <item >9:00-12:00</item>
+        <item >12:00-13:00</item>
+        <item >13:00-14:00</item>
+        <item >14:00-18:00</item>
+        <item >18:00-19:00</item>
+        <item >19:00-20:00</item>
+        <item >20:00-21:00</item>
+        <item >21:00-22:00</item>
+        <item >22:00-23:00</item>
+        <item >23:00-24:00</item>
+        <item >24:00-1:00</item>
+        </string-array>
+    <string-array name="objective">
+        <item >一</item>
+        <item >二</item>
+        <item >三</item>
+        <item >四</item>
+        <item >五</item>
+        <item >六</item>
+        <item >七</item>
+        <item >八</item>
+        <item >九</item>
+        <item >十</item>
+    </string-array>
+    <string-array name="week">
+        <item >星期一</item>
+        <item >星期二</item>
+        <item >星期三</item>
+        <item >星期四</item>
+        <item >星期五</item>
+        <item >星期六</item>
+        <item >星期日</item>
+    </string-array>
+    <string-array name="plan_content">
+        <item >站桩</item>
+        <item >丹道</item>
+        <item >潜意识</item>
+        <item >梦观/丹道/中脉</item>
+        <item >静观</item>
+        <item >中脉</item>
+        <item >梦观/丹道/中脉</item>
+        <item >梦观/丹道/中脉</item>
+        <item >梦观/丹道/中脉</item>
+        <item >潜意识</item>
+        <item >丹道</item>
+        <item >----</item>
+        <item >静观</item>
+        <item >梦观</item>
+        </string-array>
+    <string-array name="plan_content_new">
+        <item >睡觉</item>
+        <item >睡觉</item>
+        <item >起床吃早饭</item>
+        <item >打逗逗</item>
+        <item >看电影</item>
+        <item >看电影</item>
+        <item >打酱油</item>
+        <item >吃饭</item>
+        <item >裸奔</item>
+        <item >裸奔</item>
+        <item >裸奔</item>
+        <item >----</item>
+        <item >睡觉</item>
+        <item >----</item>
+        </string-array>
+    <declare-styleable name="UnderlinePageIndicator">
+        <attr name="fades" format="boolean" /> <!-- Whether or not the selected indicator fades. -->
+        <attr name="fadeDelay" format="integer" /> <!-- Length of the delay to fade the indicator. -->
+        <attr name="fadeLength" format="integer" /> <!-- Length of the indicator fade to transparent. -->
+        <attr name="android:background" /> <!-- View background -->
+    </declare-styleable>
+</resources>

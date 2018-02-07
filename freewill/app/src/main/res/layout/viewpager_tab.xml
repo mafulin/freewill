@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/LinearLayout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/black"
+              android:orientation="vertical">
+
+    <!-- TabGroup -->
+
+    <LinearLayout
+        android:id="@+id/tab_group"
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <!-- underline -->
+
+    <spirit.freewill.view.indicator.UnderlinePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#ffffff"/>
+</LinearLayout>

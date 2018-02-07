@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">freewill</string>
+    <string name="main">main</string>
+    <string name="way">方法</string>
+    <string name="article">文章</string>
+    <string name="plan">计划</string>
+    <string name="exp">笔记</string>
+    <string name="objective">目标</string>
+    <string name="other">其他</string>
+    <string name="jingguan">静观</string>
+    <string name="mengguan">梦观</string>
+    <string name="zhongmai">中脉</string>
+</resources>
