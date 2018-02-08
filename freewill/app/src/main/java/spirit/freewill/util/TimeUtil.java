@@ -48,17 +48,49 @@ public class TimeUtil {
 
         return last < time;
     }
-    public static int leftseconds() {
+    public static long leftseconds(long time) {
 
         long current=System.currentTimeMillis();//当前时间毫秒数
         long zero=current/(1000*3600*24)*(1000*3600*24)- TimeZone.getDefault().getRawOffset();//今天零点零分零秒的毫秒数
-        long twelve=zero+24*60*60*1000-1;//今天23点59分59秒的毫秒数
+        long twenty_four=zero+24*60*60*1000-1;//今天23点59分59秒的毫秒数
+        long twelve=zero+12*60*60*1000;//今天12点0分0秒的毫秒数
         long yesterday=System.currentTimeMillis()-24*60*60*1000;//昨天的这一时间的毫秒数
-        System.out.println(new Date(current));//当前时间
-        System.out.println(new Date(yesterday));//昨天这一时间点
-        System.out.println(new Date(zero));//今天零点零分零秒
-        System.out.println(new Date(twelve));//今天23点59分59秒
-        Log.i("123","leftseconds--"+(twelve-current)/1000/60);
-        return (int) ((twelve-current)/1000);
+//        System.out.println(new Date(current));//当前时间
+//        System.out.println(new Date(yesterday));//昨天这一时间点
+//        System.out.println(new Date(zero));//今天零点零分零秒
+//        System.out.println(new Date(twelve));//今天23点59分59秒
+//        Log.i("123","leftseconds--"+(twelve-current)/1000/60);
+
+        if(time < zero){
+            time = current;
+        }
+
+        if(time < twelve){
+            return twelve - time;
+        }else{
+            return twenty_four - time;
+        }
+    }
+    public static long beforeseconds(long time) {
+
+        long current=System.currentTimeMillis();//当前时间毫秒数
+        long zero=current/(1000*3600*24)*(1000*3600*24)- TimeZone.getDefault().getRawOffset();//今天零点零分零秒的毫秒数
+        long twenty_four=zero+24*60*60*1000-1;//今天23点59分59秒的毫秒数
+        long twelve=zero+12*60*60*1000;//今天12点0分0秒的毫秒数
+        long yesterday=System.currentTimeMillis()-24*60*60*1000;//昨天的这一时间的毫秒数
+//        System.out.println(new Date(current));//当前时间
+//        System.out.println(new Date(yesterday));//昨天这一时间点
+//        System.out.println(new Date(zero));//今天零点零分零秒
+//        System.out.println(new Date(twelve));//今天23点59分59秒
+//        Log.i("123","leftseconds--"+(twelve-current)/1000/60);
+        if(time < zero){
+            time = current;
+        }
+
+        if(time < twelve){
+            return time-zero;
+        }else{
+            return time-twelve;
+        }
     }
 }

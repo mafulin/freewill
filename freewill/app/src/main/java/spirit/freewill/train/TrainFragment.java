@@ -32,7 +32,7 @@ public class TrainFragment extends BaseFragment {
 		menu = (RelativeLayout) findViewById(R.id.menu);
 
 		ArrayList<Fragment> mFragmentList = new ArrayList<>();
-		mFragmentList.add(new JingGuanFragment());
+		mFragmentList.add(new WatchFragment());
 		mFragmentList.add(new ZhongmaiFragment());
 		mFragmentList.add(new QAFragment());
 

@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import spirit.freewill.R;
+import spirit.freewill.data.ConsciousnKind;
 import spirit.freewill.data.FreewillItem;
 import spirit.freewill.util.Constant;
+import spirit.freewill.util.FileUtil;
 import spirit.freewill.util.TimeUtil;
 import spirit.freewill.util.TypeUtil;
 import spirit.freewill.view.ItemView;
@@ -28,10 +30,14 @@ public class KindAdapter extends BaseAdapter {
 
     private String[] arrays;
     private String[] colors;
-
+    private List<ConsciousnKind>  consciousnKinds;
     public KindAdapter(String[] arrays,String[] colors) {
         this.arrays = arrays;
         this.colors = colors;
+        mInflater = LayoutInflater.from(Constant.context);
+    }
+    public KindAdapter() {
+        consciousnKinds = FileUtil.readKindlist(Constant.context);
         mInflater = LayoutInflater.from(Constant.context);
     }
 
@@ -41,12 +47,13 @@ public class KindAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return arrays.length;
+//        return arrays.length;
+        return consciousnKinds.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arrays[position];
+        return consciousnKinds.get(position);
     }
 
     @Override
@@ -74,8 +81,11 @@ public class KindAdapter extends BaseAdapter {
         }
 //        Log.i("123","item--"+item);
 //        holder.time.setText(item.getDate());
-        holder.color.setBackgroundColor(Color.parseColor(colors[position]));
-        holder.kind.setText(arrays[position]);
+
+//        holder.color.setBackgroundColor(Color.parseColor(colors[position]));
+//        holder.kind.setText(arrays[position]);
+        holder.color.setBackgroundColor(Color.parseColor(consciousnKinds.get(position).getColor()));
+        holder.kind.setText(consciousnKinds.get(position).getKind());
         return convertView;
     }
     public final class ViewHolder{

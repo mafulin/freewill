@@ -8,6 +8,11 @@ import java.io.Serializable;
 
 public class FreewillItem implements Serializable {
 
+    private String kind;
+    private long time;
+    private int type;
+    private String color;
+
     public int getType() {
         return type;
     }
@@ -24,16 +29,48 @@ public class FreewillItem implements Serializable {
         this.time = time;
     }
 
+    public String getColor() {
+        return color;
+    }
 
-    private long time;
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-    private int type;
+    public FreewillItem() {
+    }
+    public FreewillItem(int type, long time, String color) {
+        this.time = time;
+        this.type = type;
+        this.color = color;
+    }
+
+    public FreewillItem(int type, long time, String kind, String color) {
+        this.time = time;
+        this.type = type;
+        this.color = color;
+        this.kind = kind;
+    }
+
+
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+
 
     @Override
     public String toString() {
         return "FreewillItem{" +
                 "time=" + time +
                 ", type=" + type +
+                ", color='" + color + '\'' +
+                ", kind='" + kind + '\'' +
                 '}';
     }
 }

@@ -6,6 +6,7 @@
     android:orientation="horizontal">
 
     <RelativeLayout
+        android:visibility="gone"
         android:gravity="center"
         android:layout_gravity="center"
         android:layout_width="16dp"

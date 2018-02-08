@@ -8,7 +8,7 @@ public class Constant {
 	public static Context context; 
 	public static int width;//
 	public static int height;//
-	public static int seconds = 12*60*60;
+	public static int seconds = 12*60*60*1000;
 	public static int zhongwidth;//
 	public static int zhongheight;//
 	public static float f1 = 0.0625f;

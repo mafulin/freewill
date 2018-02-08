@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.SpannableString;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import spirit.freewill.R;
+import spirit.freewill.data.ConsciousnKind;
 import spirit.freewill.data.FreewillItem;
 import spirit.freewill.menu.BaseFragment;
 import spirit.freewill.number.PXUtil;
@@ -49,6 +49,7 @@ public class JingGuanFragment extends BaseFragment {
 	private TextView action;
 	private List<FreewillItem> data = new ArrayList<FreewillItem>();
 	private TrainAdapter trainAdapter;
+	private KindAdapter kindAdapter;
 	private PieChart mChart;
 	private View clock;
 
@@ -82,15 +83,10 @@ public class JingGuanFragment extends BaseFragment {
 
 		trainAdapter = new TrainAdapter(this.getActivity());
 		if(TimeUtil.isyesterday(SPUtil.getLast(Constant.context))){
-			FileUtil.deleteList(Constant.context);
+//			FileUtil.deleteList(Constant.context);
 		}
 
-		chart_group.post(new Runnable() {
-			@Override
-			public void run() {
-				initChart();
-			}
-		});
+
 //		mChart = (PieChart) findViewById(R.id.chart);
 
 
@@ -98,11 +94,17 @@ public class JingGuanFragment extends BaseFragment {
 	}
 
 	private void initKind() {
-		list_kind.setAdapter(new KindAdapter(getResources().getStringArray(R.array.kind),getResources().getStringArray(R.array.color)));
+		kindAdapter = new KindAdapter();
+		list_kind.setAdapter(kindAdapter);
+//		list_kind.setAdapter(new KindAdapter(getResources().getStringArray(R.array.kind),getResources().getStringArray(R.array.color)));
 		list_kind.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+				ConsciousnKind item = (ConsciousnKind) kindAdapter.getItem(position);
+				Log.i("123","position--"+position);
+				Log.i("123","item--"+item);
+				data = FileUtil.addItem(new FreewillItem(item.getIndex(), System.currentTimeMillis(),item.getColor()));
+				setData();
 			}
 		});
 	}
@@ -117,10 +119,11 @@ public class JingGuanFragment extends BaseFragment {
 		mChart.getDescription().setEnabled(false);
 //		mChart.setExtraOffsets(5, 5, 5, 5);
 
-		mChart.setDragDecelerationFrictionCoef(0.15f);
+		mChart.setDragDecelerationFrictionCoef(0.95f);
 
 //		mChart.setCenterTextTypeface(mTfLight);
-		mChart.setCenterText(generateCenterSpannableText());
+//		mChart.setCenterText(generateCenterSpannableText());
+		mChart.setDrawCenterText(false);
 
 		mChart.setDrawHoleEnabled(true);
 		mChart.setHoleColor(Color.parseColor("#222222"));
@@ -132,7 +135,7 @@ public class JingGuanFragment extends BaseFragment {
 		mChart.setTransparentCircleRadius(36f);
 		Log.i("123",""+ PXUtil.dip2px(50));
 		Log.i("123",""+ PXUtil.px2dip(54));
-		mChart.setDrawCenterText(false);
+
 
 		mChart.setRotationAngle(270);
 		// enable rotation of the chart by touch
@@ -140,56 +143,68 @@ public class JingGuanFragment extends BaseFragment {
 		mChart.setHighlightPerTapEnabled(true);
 //		mChart.setOnChartValueSelectedListener(this);
 
-		setData();
-		mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
+//		mChart.animateY(0, Easing.EasingOption.Linear);
 		// mChart.spin(2000, 0, 360);
 
 
 		Legend l = mChart.getLegend();
-//		l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-//		l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
-//		l.setOrientation(Legend.LegendOrientation.VERTICAL);
-//		l.setDrawInside(false);
-//		l.setXEntrySpace(7f);
-//		l.setYEntrySpace(0f);
-//		l.setYOffset(0f);
 		l.setEnabled(false);
-		// entry label styling
 		mChart.setEntryLabelColor(Color.WHITE);
-//		mChart.setEntryLabelTypeface(mTfRegular);
 		mChart.setEntryLabelTextSize(12f);
-	}
-	private void setData() {
+		setData();
 
-		TimeUtil.leftseconds();
-		ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
-		entries.add(new PieEntry(43200));
-		entries.add(new PieEntry(100));
+	}
+	private ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+	private ArrayList<Integer> colors = new ArrayList<Integer>();
+	private void setData() {
+		entries.clear();
+		colors.clear();
+		setPies();
+//		setColors();
+//		ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+//		entries.add(new PieEntry(TimeUtil.beforeseconds(0)));
+//		entries.add(new PieEntry(TimeUtil.leftseconds(0)));
 
 		PieDataSet dataSet = new PieDataSet(entries, "颜色对应");
 
 		dataSet.setDrawIcons(false);
 
 		dataSet.setSliceSpace(0.1f);
-//		dataSet.setIconsOffset(new MPPointF(140, 140));
 		dataSet.setSelectionShift(0f);
 
-		// add a lot of colors
 
-		ArrayList<Integer> colors = new ArrayList<Integer>();
-
-		colors.add(Color.GRAY);
-		colors.add(Color.parseColor("#88ff0000"));
-
+//		ArrayList<Integer> colors = new ArrayList<Integer>();
+//
+//		colors.add(Color.GRAY);
+//		colors.add(Color.parseColor("#00000000"));
+//		ArrayList<Integer> colors = new ArrayList<Integer>();
+//
+//		for (int c : ColorTemplate.VORDIPLOM_COLORS)
+//			colors.add(c);
+//
+//		for (int c : ColorTemplate.JOYFUL_COLORS)
+//			colors.add(c);
+//
+//		for (int c : ColorTemplate.COLORFUL_COLORS)
+//			colors.add(c);
+//
+//		for (int c : ColorTemplate.LIBERTY_COLORS)
+//			colors.add(c);
+//
+//		for (int c : ColorTemplate.PASTEL_COLORS)
+//			colors.add(c);
+//
+//		colors.add(ColorTemplate.getHoloBlue());
 
 		dataSet.setColors(colors);
-		//dataSet.setSelectionShift(0f);
+//		ArrayList<Integer> colors = setColors();
+//
+//		dataSet.setColors(colors);
 
 		PieData data = new PieData(dataSet);
 		data.setValueFormatter(new PercentFormatter());
 //		data.setValueTextSize(11f);
 		data.setValueTextColor(Color.TRANSPARENT);
-//		data.setValueTypeface(mTfLight);
 		mChart.setData(data);
 
 		// undo all highlights
@@ -197,15 +212,82 @@ public class JingGuanFragment extends BaseFragment {
 
 		mChart.invalidate();
 	}
+
+	private ArrayList<PieEntry> setPies() {
+//		ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+		Log.i("123","data.size()--"+data.size());
+//		if(data.size() > 0){
+//			for(int i = 0 ; i < data.size(); i++){
+//				if(i == 0){
+//					Log.i("123","TimeUtil.beforeseconds(data.get(i).getTime()----"+TimeUtil.beforeseconds(data.get(i).getTime()));
+//					entries.add(new PieEntry(TimeUtil.beforeseconds(data.get(i).getTime())));
+//					colors.add(Color.GRAY);
+//
+//				}else{
+//					Log.i("123","(data.get(i).getTime() - data.get(i -1).getTime())----"+(data.get(i).getTime() - data.get(i -1).getTime()));
+//					Log.i("123","data.get(i-1).getColor()----"+data.get(i-1).getColor());
+//
+//					entries.add(new PieEntry(data.get(i).getTime() - data.get(i -1).getTime()));
+//					colors.add(Color.parseColor(data.get(i-1).getColor()));
+//				}
+//				if(i == (data.size() -1)){
+//					Log.i("123","TimeUtil.leftseconds(data.get(i).getTime())----"+TimeUtil.leftseconds(data.get(i).getTime()));
+//
+//					entries.add(new PieEntry(TimeUtil.leftseconds(data.get(i).getTime())));
+//					colors.add(Color.parseColor("#00000000"));
+//				}
+//
+//			}
+//		}else{
+//			entries.add(new PieEntry(TimeUtil.beforeseconds(0)));
+//			colors.add(Color.GRAY);
+//			entries.add(new PieEntry(TimeUtil.leftseconds(0)));
+//			colors.add(Color.parseColor("#00000000"));
+//		}
+//		if(data.size() > 0){
+//			entries.add(new PieEntry(TimeUtil.beforeseconds(data.get(0).getTime())/1000f));
+//			colors.add(Color.GRAY);
+//		}
+
+
+		for(int i = 1 ; i < data.size(); i++){
+//				Log.i("123","(data.get(i).getTime() - data.get(i -1).getTime())----"+(data.get(i).getTime() - data.get(i -1).getTime()));
+//				Log.i("123","data.get(i).getTime()-data.get(i-1).getTime()----"+(data.get(i).getTime()-data.get(i-1).getTime()));
+
+				entries.add(new PieEntry((data.get(i).getTime()-data.get(i-1).getTime())/1000f));
+				colors.add(Color.parseColor(data.get(i).getColor()));
+
+		}
+
+		Log.i("123","entries--"+entries.size());
+		return entries;
+	}
+	private ArrayList<Integer> setColors() {
+		ArrayList<Integer> colors = new ArrayList<Integer>();
+		if(data.size() > 0){
+			for(int i = 0 ; i < data.size(); i++){
+				if(i == 0){
+					colors.add(Color.GRAY);
+				}else{
+					colors.add(Color.parseColor(data.get(i).getColor()));
+
+				}
+				if(i == (data.size() -1)){
+					colors.add(Color.parseColor("#00000000"));
+				}
+
+			}
+		}else{
+			colors.add(Color.GRAY);
+			colors.add(Color.parseColor("#00000000"));
+		}
+		Log.i("123","colors--"+colors);
+		return colors;
+	}
+
 	private SpannableString generateCenterSpannableText() {
 
 		SpannableString s = new SpannableString("静观");
-//		s.setSpan(new RelativeSizeSpan(1.7f), 0, 14, 0);
-//		s.setSpan(new StyleSpan(Typeface.NORMAL), 14, s.length() - 15, 0);
-//		s.setSpan(new ForegroundColorSpan(Color.GRAY), 14, s.length() - 15, 0);
-//		s.setSpan(new RelativeSizeSpan(.8f), 14, s.length() - 15, 0);
-//		s.setSpan(new StyleSpan(Typeface.ITALIC), s.length() - 14, s.length(), 0);
-//		s.setSpan(new ForegroundColorSpan(ColorTemplate.getHoloBlue()), s.length() - 14, s.length(), 0);
 		return s;
 	}
 
@@ -229,35 +311,42 @@ public class JingGuanFragment extends BaseFragment {
 		trainAdapter.setData(data);
 		list.setAdapter(trainAdapter);
 		list.setSelection(trainAdapter.getCount() - 1);
-
+		chart_group.post(new Runnable() {
+			@Override
+			public void run() {
+				initChart();
+			}
+		});
 	}
 	public void click(View v){
-		FreewillItem freewillItem = new FreewillItem();
+//		FreewillItem freewillItem = new FreewillItem();
 //        freewillItem.setDate(TimeUtil.getNowTimeyyyy_MM_dd_HH_mm_ss());
-		freewillItem.setTime(System.currentTimeMillis());
-		SPUtil.saveLast(Constant.context,System.currentTimeMillis());
-		switch (v.getId()){
-			case R.id.start_end:
-				boolean startend = SPUtil.getStart_End(Constant.context);
-				SPUtil.setStart_End(Constant.context,!startend);
-				start_end.setText(!startend?"结束":"开始");
-				freewillItem.setType(!startend?TypeUtil.TYPE_start:TypeUtil.TYPE_end);
-				break;
-			case R.id.silent:
-				freewillItem.setType(TypeUtil.TYPE_jing);
-				break;
-			case R.id.action:
-				freewillItem.setType(TypeUtil.TYPE_dong);
-				break;
-		}
-		data = FileUtil.readlist(Constant.context);
-		if(data == null){
-			data = new ArrayList<FreewillItem>();
-		}
-		data.add(freewillItem);
-		trainAdapter.setData(data);
-		FileUtil.writeList(Constant.context,data);
-		list.setSelection(trainAdapter.getCount() - 1);
+//		freewillItem.setTime(System.currentTimeMillis());
+//		SPUtil.saveLast(Constant.context,System.currentTimeMillis());
+//		switch (v.getId()){
+//			case R.id.start_end:
+//				boolean startend = SPUtil.getStart_End(Constant.context);
+//				SPUtil.setStart_End(Constant.context,!startend);
+//				start_end.setText(!startend?"结束":"开始");
+//				freewillItem.setType(!startend?TypeUtil.TYPE_start:TypeUtil.TYPE_end);
+//				break;
+//			case R.id.silent:
+//				freewillItem.setType(TypeUtil.TYPE_jing);
+//				break;
+//			case R.id.action:
+//				freewillItem.setType(TypeUtil.TYPE_dong);
+//				break;
+//		}
+//		data = FileUtil.readlist(Constant.context);
+//		if(data == null){
+//			data = new ArrayList<FreewillItem>();
+//		}
+//		data.add(freewillItem);
+//		trainAdapter.setData(data);
+//		FileUtil.writeList(Constant.context,data);
+//		list.setSelection(trainAdapter.getCount() - 1);
+		Log.i("123",""+FileUtil.readlist(Constant.context).size());
+
 	}
 	public View.OnClickListener listener = new View.OnClickListener(){
 

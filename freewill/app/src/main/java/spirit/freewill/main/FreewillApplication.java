@@ -4,8 +4,13 @@ import android.app.Application;
 import android.util.Log;
 import android.view.WindowManager;
 
+import java.util.ArrayList;
+
+import spirit.freewill.R;
+import spirit.freewill.data.ConsciousnKind;
 import spirit.freewill.number.PXUtil;
 import spirit.freewill.util.Constant;
+import spirit.freewill.util.FileUtil;
 
 /**
  * Created by mafulin on 2018/1/16.
@@ -13,13 +18,15 @@ import spirit.freewill.util.Constant;
 
 public class FreewillApplication extends Application {
 
-    public static String APPID = "d8c188799a8946d85b91b5c6c569031f";
 
     @Override
     public void onCreate() {
         super.onCreate();
         initConstant();
+        initConsciousnKindList();
+
     }
+
 
     private void initConstant(){
         Constant.context = getApplicationContext();
@@ -34,5 +41,17 @@ public class FreewillApplication extends Application {
         Log.i("123","i"+i);
         Log.i("123","i2"+i2);
 
+    }
+
+    private void initConsciousnKindList() {
+        String[] kinds = getResources().getStringArray(R.array.kind);
+        String[] colors = getResources().getStringArray(R.array.color);
+        ArrayList<ConsciousnKind>  consciousnKinds = new ArrayList<>();
+        Log.i("123","kinds--"+kinds.length);
+        Log.i("123","colors--"+colors.length);
+        for(int i =0; i < kinds.length; i++ ){
+            consciousnKinds.add(new ConsciousnKind(i,kinds[i],colors[i%colors.length]));
+        }
+        FileUtil.writeKindList(this,consciousnKinds);
     }
 }
