@@ -69,7 +69,7 @@ public class TrainAdapter extends BaseAdapter {
 //        Log.i("123","item--"+item);
 //        holder.time.setText(item.getDate());
         holder.time.setText(TimeUtil.getTimeByM(item.getTime()));
-        holder.type.setText(TypeUtil.typeToStr(item.getType()));
+        holder.type.setText(item.getKind());
         holder.start_end.setType(item.getType());
         return convertView;
     }

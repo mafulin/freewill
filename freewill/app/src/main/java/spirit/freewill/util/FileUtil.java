@@ -74,6 +74,22 @@ public class FileUtil {
     public static void deleteList(Context context){
         context.deleteFile(LIST_KEY);
     }
+    public static void deleteYestodayList(Context context){
+        List<FreewillItem> readlist = readlist(context);
+
+        if(readlist.isEmpty()){
+            return;
+        }
+
+        List<FreewillItem> list = new ArrayList<>();
+        list.addAll(readlist);
+        for (FreewillItem item:readlist) {
+            if(TimeUtil.isyesterday(item.getTime())){
+                list.remove(item);
+            }
+        }
+        writeList(context,list);
+    }
     public static List<ConsciousnKind> readKindlist(Context context){
         try {
             FileInputStream openFileInput = context.openFileInput(LIST_KIND_KEY);

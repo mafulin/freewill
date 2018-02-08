@@ -38,6 +38,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <spirit.freewill.view.ClockPerView
+                    android:layout_margin="3dp"
                     android:id="@+id/clockper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

@@ -4,7 +4,10 @@ import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
+
+import spirit.freewill.data.FreewillItem;
 
 /**
  * Created by mafulin on 2018/1/16.
@@ -40,13 +43,19 @@ public class TimeUtil {
     }
 
     public static boolean isyesterday(long last) {
-        Date date = new Date();
-        long l = 24*60*60*1000; //每天的毫秒数
-        //date.getTime()是现在的毫秒数，它 减去 当天零点到现在的毫秒数（ 现在的毫秒数%一天总的毫秒数，取余。），理论上等于零点的毫秒数，不过这个毫秒数是UTC+0时区的。
-        //减8个小时的毫秒值是为了解决时区的问题。
-        long time = date.getTime() - (date.getTime() % l) - 8 * 60 * 60 * 1000;
 
-        return last < time;
+
+        long current=System.currentTimeMillis();//当前时间毫秒数
+        long zero=current/(1000*3600*24)*(1000*3600*24)- TimeZone.getDefault().getRawOffset();//今天零点零分零秒的毫秒数
+
+
+//        Date date = new Date();
+//        long l = 24*60*60*1000; //每天的毫秒数
+//        //date.getTime()是现在的毫秒数，它 减去 当天零点到现在的毫秒数（ 现在的毫秒数%一天总的毫秒数，取余。），理论上等于零点的毫秒数，不过这个毫秒数是UTC+0时区的。
+//        //减8个小时的毫秒值是为了解决时区的问题。
+//        long time = date.getTime() - (date.getTime() % l) - 8 * 60 * 60 * 1000;
+
+        return last < zero;
     }
     public static long leftseconds(long time) {
 
@@ -92,5 +101,23 @@ public class TimeUtil {
         }else{
             return time-twelve;
         }
+    }
+    public static boolean isAM(long time) {
+
+        long current=System.currentTimeMillis();//当前时间毫秒数
+        long zero=current/(1000*3600*24)*(1000*3600*24)- TimeZone.getDefault().getRawOffset();//今天零点零分零秒的毫秒数
+        long twenty_four=zero+24*60*60*1000-1;//今天23点59分59秒的毫秒数
+        long twelve=zero+12*60*60*1000;//今天12点0分0秒的毫秒数
+        long yesterday=System.currentTimeMillis()-24*60*60*1000;//昨天的这一时间的毫秒数
+//        System.out.println(new Date(current));//当前时间
+//        System.out.println(new Date(yesterday));//昨天这一时间点
+//        System.out.println(new Date(zero));//今天零点零分零秒
+//        System.out.println(new Date(twelve));//今天23点59分59秒
+//        Log.i("123","leftseconds--"+(twelve-current)/1000/60);
+        if(time < zero){
+            time = current;
+        }
+
+        return  time < twelve;
     }
 }

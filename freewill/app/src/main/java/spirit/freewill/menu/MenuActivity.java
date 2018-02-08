@@ -1,11 +1,8 @@
 package spirit.freewill.menu;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,7 +10,6 @@ import android.widget.TextView;
 
 import spirit.freewill.R;
 import spirit.freewill.qa.QAFragment;
-import spirit.freewill.train.JingGuanFragment;
 import spirit.freewill.train.TrainFragment;
 import spirit.freewill.user.MyFragment;
 
