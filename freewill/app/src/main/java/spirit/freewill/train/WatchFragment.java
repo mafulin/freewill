@@ -37,7 +37,7 @@ public class WatchFragment extends BaseFragment {
 
 	@Override
 	public int setContentView() {
-		return R.layout.fragment_watch;
+		return R.layout.fragment_watch_test;
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class WatchFragment extends BaseFragment {
 //		NotifyUtil.start(Constant.context);
 		root = (RelativeLayout) findViewById(R.id.root);
 		menu = (RelativeLayout) findViewById(R.id.menu);
-		chart_group = (RelativeLayout) findViewById(R.id.chart_group);
+//		chart_group = (RelativeLayout) findViewById(R.id.chart_group);
 		list = (ListView) findViewById(R.id.list);
 		list_kind = (ListView) findViewById(R.id.list_kind);
 		silent = (TextView) findViewById(R.id.silent);
@@ -61,7 +61,7 @@ public class WatchFragment extends BaseFragment {
 //		if(TimeUtil.isyesterday(SPUtil.getLast(Constant.context))){
 //			FileUtil.deleteList(Constant.context);
 //		}
-		FileUtil.deleteYestodayList(Constant.context);
+
 
 		clockper = (ClockPerView) findViewById(R.id.clockper);
 
@@ -80,6 +80,8 @@ public class WatchFragment extends BaseFragment {
 				Log.i("123","item--"+item);
 				data = FileUtil.addItem(new FreewillItem(item.getIndex(), System.currentTimeMillis(),item.getKind(),item.getColor()));
 				clockper.setData(data);
+				trainAdapter.setData(data);
+//				list.setSelection(trainAdapter.getCount() - 1);
 			}
 		});
 	}
@@ -95,6 +97,7 @@ public class WatchFragment extends BaseFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
+		FileUtil.deleteYestodayList(Constant.context);
 		data = FileUtil.readlist(Constant.context);
 		if(data == null){
 			data = new ArrayList<FreewillItem>();
@@ -102,12 +105,12 @@ public class WatchFragment extends BaseFragment {
 		clockper.setData(data);
 		trainAdapter.setData(data);
 		list.setAdapter(trainAdapter);
-		list.setSelection(trainAdapter.getCount() - 1);
-		chart_group.post(new Runnable() {
-			@Override
-			public void run() {
-			}
-		});
+//		list.setSelection(trainAdapter.getCount() - 1);
+//		chart_group.post(new Runnable() {
+//			@Override
+//			public void run() {
+//			}
+//		});
 	}
 	public void click(View v){
 //		FreewillItem freewillItem = new FreewillItem();
@@ -136,7 +139,6 @@ public class WatchFragment extends BaseFragment {
 //		trainAdapter.setData(data);
 //		FileUtil.writeList(Constant.context,data);
 //		list.setSelection(trainAdapter.getCount() - 1);
-		Log.i("123",""+FileUtil.readlist(Constant.context).size());
 
 	}
 	public View.OnClickListener listener = new View.OnClickListener(){
@@ -144,7 +146,6 @@ public class WatchFragment extends BaseFragment {
 		@Override
 		public void onClick(View v) {
 			click(v);
-			TestUtil.makeD();
 		}
 	};
 }

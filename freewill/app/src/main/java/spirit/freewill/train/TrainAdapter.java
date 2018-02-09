@@ -56,7 +56,7 @@ public class TrainAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.item_freewill, null);
             holder.time = (TextView)convertView.findViewById(R.id.time);
             holder.type = (TextView)convertView.findViewById(R.id.type);
-            holder.start_end = (ItemView) convertView.findViewById(R.id.start);
+//            holder.start_end = (ItemView) convertView.findViewById(R.id.start);
 //            holder.middle = convertView.findViewById(R.id.middle);
 //            holder.end = convertView.findViewById(R.id.end);
             convertView.setTag(holder);
@@ -70,7 +70,7 @@ public class TrainAdapter extends BaseAdapter {
 //        holder.time.setText(item.getDate());
         holder.time.setText(TimeUtil.getTimeByM(item.getTime()));
         holder.type.setText(item.getKind());
-        holder.start_end.setType(item.getType());
+//        holder.start_end.setType(item.getType());
         return convertView;
     }
     public final class ViewHolder{

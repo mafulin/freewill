@@ -26,7 +26,7 @@ public class TimeUtil {
         return time;
     }
     public static String getTimeByM(long millis) {
-        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat df = new SimpleDateFormat("MM-dd HH:mm:ss");
         String time = String.valueOf(df.format(new Date(millis)));
         return time;
     }

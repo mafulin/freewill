@@ -17,12 +17,21 @@
             android:background="@drawable/bg_border_gray"
             android:id="@+id/list_group"
             android:layout_width="85dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:text="编辑"
+                android:gravity="center"
+                android:background="@drawable/bg_border_gray"
+                android:textColor="@color/white_7f"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:textSize="18sp"/>
             <ListView
                 android:padding="5dp"
                 android:id="@+id/list_kind"
                 android:divider="@null"
-                android:dividerHeight="0dp"
+                android:dividerHeight="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></ListView>
         </LinearLayout>
@@ -47,6 +56,17 @@
                     android:layout_centerInParent="true"
                     android:layout_width="100dp"
                     android:layout_height="100dp" />
+                <ListView
+                    android:visibility="visible"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:id="@+id/list2"
+                    android:divider="@null"
+                    android:stackFromBottom="true"
+                    android:transcriptMode="alwaysScroll"
+                    android:dividerHeight="0dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"></ListView>
             </RelativeLayout>
             <!--<View-->
                 <!--android:layout_width="match_parent"-->
@@ -58,18 +78,14 @@
                 android:orientation="horizontal"
                 android:layout_weight="1">
                 <ListView
-                    android:background="@drawable/bg_border_gray"
                     android:padding="5dp"
                     android:id="@+id/list"
                     android:divider="@null"
+                    android:stackFromBottom="true"
+                    android:transcriptMode="alwaysScroll"
                     android:dividerHeight="0dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="80dp"
                     android:layout_height="match_parent"></ListView>
-                <View
-                    android:visibility="gone"
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent"/>
                 <LinearLayout
                     android:background="@drawable/bg_border_gray"
                     android:padding="5dp"
@@ -78,6 +94,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
+                        android:visibility="gone"
                         android:layout_margin="20dp"
                         android:id="@+id/start_end"
                         android:onClick="click"

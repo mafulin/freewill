@@ -157,6 +157,7 @@ public class ClockPerView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
         super.onMeasure(widthMeasureSpec, widthMeasureSpec);
+//        super.onMeasure(heightMeasureSpec, heightMeasureSpec);
 //		Log.i("123","width/2-"+width/2);
 //		setMeasuredDimension((int)(Constant.width/2), (int)(Constant.width/2));
 //		setMeasuredDimension((int)(width), (int)(height));
@@ -219,7 +220,12 @@ public class ClockPerView extends View {
             }
         }
         if(pmpers.isEmpty()){
-            pmpers.add(new Per(pmall,(TimeUtil.beforeseconds(0)*360.0f/Constant.seconds),"#FF888888"));
+            if(TimeUtil.isAM(System.currentTimeMillis())){
+//                ampers.add(new Per(amall,(TimeUtil.beforeseconds(0)*360.0f/Constant.seconds),"#FF888888"));
+            }else{
+//                ampers.add(new Per(amall,360.0f,"#FF888888"));
+                pmpers.add(new Per(pmall,(TimeUtil.beforeseconds(0)*360.0f/Constant.seconds),"#FF888888"));
+            }
         }
 
     }
