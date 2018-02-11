@@ -20,6 +20,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
+                android:visibility="gone"
                 android:text="编辑"
                 android:gravity="center"
                 android:background="@drawable/bg_border_gray"

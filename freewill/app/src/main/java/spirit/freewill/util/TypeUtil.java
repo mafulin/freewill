@@ -30,11 +30,11 @@ public class TypeUtil {
 
     public static final String REMEMBER_COLOR = "#00ffff";
     public static final String WISDOM_COLOR = "#ffd700";
-    public static final String PECULIARITY_COLOR = "#7f000000";
-    public static final String INERTIA_COLOR = "#7fffffff";
+    public static final String PECULIARITY_COLOR = "#cc00cc";
+    public static final String INERTIA_COLOR = "#669999";
 
     public static final String SILENT_COLOR = "#000000";
     public static final String ACTION_COLOR = "#ffffff";
-    public static final String ALL_COLOR = "#88ffffff";
+    public static final String ALL_COLOR = "#888888";
 
 }

@@ -169,7 +169,7 @@ public class WatchFragment extends BaseFragment {
 			case R.id.all:
 				freewillItem.setType(TypeUtil.ALL);
 				freewillItem.setColor(TypeUtil.ALL_COLOR);
-				freewillItem.setKind("你好，欢迎使用静观助手app");
+//				freewillItem.setKind("你好，欢迎使用静观助手app");
 				break;
 		}
 		data = FileUtil.addItem(freewillItem);

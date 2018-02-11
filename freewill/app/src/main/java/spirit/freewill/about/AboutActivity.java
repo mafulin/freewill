@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.tencent.bugly.beta.Beta;
+
 import spirit.freewill.R;
 
 /**
@@ -28,6 +30,7 @@ public class AboutActivity extends AppCompatActivity {
     private void initview() {
         root = (RelativeLayout) findViewById(R.id.root);
         menu = (RelativeLayout) findViewById(R.id.menu);
+        Beta.checkUpgrade();
     }
 
 
