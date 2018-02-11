@@ -11,6 +11,7 @@ import android.widget.TextView;
 import spirit.freewill.R;
 import spirit.freewill.qa.QAFragment;
 import spirit.freewill.train.TrainFragment;
+import spirit.freewill.train.WatchFragment;
 import spirit.freewill.user.MyFragment;
 
 
@@ -41,16 +42,16 @@ public class MenuActivity extends AppCompatActivity {
 
         mTabHost.addTab(
                 mTabHost.newTabSpec("train").setIndicator(getTabView("练习",R.drawable.eight)),
-                TrainFragment.class, null);
+                WatchFragment.class, null);
         mTabHost.addTab(
                 mTabHost.newTabSpec("study").setIndicator(getTabView("学习",R.drawable.nine)),
                 ArticleFragment.class, null);
         mTabHost.addTab(
                 mTabHost.newTabSpec("exchange").setIndicator(getTabView("交流",R.drawable.eleven)),
                 QAFragment.class, null);
-        mTabHost.addTab(
-                mTabHost.newTabSpec("my").setIndicator(getTabView("我的",R.drawable.he)),
-                MyFragment.class, null);
+//        mTabHost.addTab(
+//                mTabHost.newTabSpec("my").setIndicator(getTabView("我的",R.drawable.he)),
+//                MyFragment.class, null);
 
     }
 

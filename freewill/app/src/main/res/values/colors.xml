@@ -6,7 +6,7 @@
     <color name="white">#ffffff</color>
     <color name="white_7f">#7fffffff</color>
     <color name="black">#000000</color>
-    <color name="black_7f">#7fffffff</color>
+    <color name="black_7f">#7f000000</color>
     <color name="lg">#999999</color>
     <color name="dg">#666666</color>
     <color name="blue">#0000FF</color>

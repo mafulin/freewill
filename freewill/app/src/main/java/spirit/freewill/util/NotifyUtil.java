@@ -23,14 +23,14 @@ public class NotifyUtil {
 
 
         Intent intent_silent = new Intent(context, NotifyService.class);
-        intent_silent.putExtra("type",TypeUtil.TYPE_jing);
+        intent_silent.putExtra("type",TypeUtil.SILENT);
         intent_silent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendIntent_silent = PendingIntent.getService(context, (int) SystemClock.uptimeMillis(),
                 intent_silent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteView.setOnClickPendingIntent(R.id.silent, pendIntent_silent);
 
         Intent intent_action = new Intent(context, NotifyService.class);
-        intent_action.putExtra("type",TypeUtil.TYPE_dong);
+        intent_action.putExtra("type",TypeUtil.ACTION);
         intent_action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendIntent_action = PendingIntent.getService(context, (int) SystemClock.uptimeMillis(),
                 intent_action, PendingIntent.FLAG_UPDATE_CURRENT);

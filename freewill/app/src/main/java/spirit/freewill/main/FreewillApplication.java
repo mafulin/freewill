@@ -11,6 +11,7 @@ import spirit.freewill.data.ConsciousnKind;
 import spirit.freewill.number.PXUtil;
 import spirit.freewill.util.Constant;
 import spirit.freewill.util.FileUtil;
+import spirit.freewill.util.TestUtil;
 
 /**
  * Created by mafulin on 2018/1/16.
@@ -24,6 +25,7 @@ public class FreewillApplication extends Application {
         super.onCreate();
         initConstant();
         initConsciousnKindList();
+        TestUtil.makeData();
 
     }
 

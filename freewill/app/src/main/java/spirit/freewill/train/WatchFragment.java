@@ -18,6 +18,7 @@ import spirit.freewill.util.Constant;
 import spirit.freewill.util.FileUtil;
 import spirit.freewill.util.SPUtil;
 import spirit.freewill.util.TestUtil;
+import spirit.freewill.util.TypeUtil;
 import spirit.freewill.view.ClockPerView;
 
 
@@ -27,7 +28,7 @@ public class WatchFragment extends BaseFragment {
 	private RelativeLayout chart_group;
 	private ListView list;
 	private ListView list_kind;
-	private TextView start_end;
+	private TextView physiology;
 	private TextView silent;
 	private TextView action;
 	private List<FreewillItem> data = new ArrayList<FreewillItem>();
@@ -51,11 +52,18 @@ public class WatchFragment extends BaseFragment {
 		list_kind = (ListView) findViewById(R.id.list_kind);
 		silent = (TextView) findViewById(R.id.silent);
 		action = (TextView) findViewById(R.id.action);
-		start_end = (TextView) findViewById(R.id.start_end);
-		start_end.setText(SPUtil.getStart_End(Constant.context)?"结束":"开始");
+		physiology = (TextView) findViewById(R.id.physiology);
+		findViewById(R.id.emotion).setOnClickListener(listener);
+		findViewById(R.id.thought).setOnClickListener(listener);
+		findViewById(R.id.will).setOnClickListener(listener);
+		findViewById(R.id.remember).setOnClickListener(listener);
+		findViewById(R.id.wisdom).setOnClickListener(listener);
+		findViewById(R.id.peculiarity).setOnClickListener(listener);
+		findViewById(R.id.inertia).setOnClickListener(listener);
+		findViewById(R.id.all).setOnClickListener(listener);
 		silent.setOnClickListener(listener);
 		action.setOnClickListener(listener);
-		start_end.setOnClickListener(listener);
+		physiology.setOnClickListener(listener);
 
 		trainAdapter = new TrainAdapter(this.getActivity());
 //		if(TimeUtil.isyesterday(SPUtil.getLast(Constant.context))){
@@ -113,32 +121,60 @@ public class WatchFragment extends BaseFragment {
 //		});
 	}
 	public void click(View v){
-//		FreewillItem freewillItem = new FreewillItem();
-//        freewillItem.setDate(TimeUtil.getNowTimeyyyy_MM_dd_HH_mm_ss());
-//		freewillItem.setTime(System.currentTimeMillis());
-//		SPUtil.saveLast(Constant.context,System.currentTimeMillis());
-//		switch (v.getId()){
-//			case R.id.start_end:
-//				boolean startend = SPUtil.getStart_End(Constant.context);
-//				SPUtil.setStart_End(Constant.context,!startend);
-//				start_end.setText(!startend?"结束":"开始");
-//				freewillItem.setType(!startend?TypeUtil.TYPE_start:TypeUtil.TYPE_end);
-//				break;
-//			case R.id.silent:
-//				freewillItem.setType(TypeUtil.TYPE_jing);
-//				break;
-//			case R.id.action:
-//				freewillItem.setType(TypeUtil.TYPE_dong);
-//				break;
-//		}
-//		data = FileUtil.readlist(Constant.context);
-//		if(data == null){
-//			data = new ArrayList<FreewillItem>();
-//		}
-//		data.add(freewillItem);
-//		trainAdapter.setData(data);
-//		FileUtil.writeList(Constant.context,data);
-//		list.setSelection(trainAdapter.getCount() - 1);
+		FreewillItem freewillItem = new FreewillItem();
+		freewillItem.setTime(System.currentTimeMillis());
+		freewillItem.setKind(((TextView)v).getText().toString());
+
+		switch (v.getId()){
+			case R.id.physiology:
+				freewillItem.setType(TypeUtil.PHYSIOLOGY);
+				freewillItem.setColor(TypeUtil.PHYSIOLOGY_COLOR);
+				break;
+			case R.id.emotion:
+				freewillItem.setType(TypeUtil.EMOTION);
+				freewillItem.setColor(TypeUtil.EMOTION_COLOR);
+				break;
+			case R.id.thought:
+				freewillItem.setType(TypeUtil.THOUGHT);
+				freewillItem.setColor(TypeUtil.THOUGHT_COLOR);
+				break;
+			case R.id.will:
+				freewillItem.setType(TypeUtil.WILL);
+				freewillItem.setColor(TypeUtil.WILL_COLOR);
+				break;
+			case R.id.remember:
+				freewillItem.setType(TypeUtil.REMEMBER);
+				freewillItem.setColor(TypeUtil.REMEMBER_COLOR);
+				break;
+			case R.id.wisdom:
+				freewillItem.setType(TypeUtil.WISDOM);
+				freewillItem.setColor(TypeUtil.WISDOM_COLOR);
+				break;
+			case R.id.peculiarity:
+				freewillItem.setType(TypeUtil.PECULIARITY);
+				freewillItem.setColor(TypeUtil.PECULIARITY_COLOR);
+				break;
+			case R.id.inertia:
+				freewillItem.setType(TypeUtil.INERTIA);
+				freewillItem.setColor(TypeUtil.INERTIA_COLOR);
+				break;
+			case R.id.silent:
+				freewillItem.setType(TypeUtil.SILENT);
+				freewillItem.setColor(TypeUtil.SILENT_COLOR);
+				break;
+			case R.id.action:
+				freewillItem.setType(TypeUtil.ACTION);
+				freewillItem.setColor(TypeUtil.ACTION_COLOR);
+				break;
+			case R.id.all:
+				freewillItem.setType(TypeUtil.ALL);
+				freewillItem.setColor(TypeUtil.ALL_COLOR);
+				freewillItem.setKind("你好，欢迎使用静观助手app");
+				break;
+		}
+		data = FileUtil.addItem(freewillItem);
+		clockper.setData(data);
+		trainAdapter.setData(data);
 
 	}
 	public View.OnClickListener listener = new View.OnClickListener(){

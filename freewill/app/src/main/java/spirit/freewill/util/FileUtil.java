@@ -84,7 +84,8 @@ public class FileUtil {
         List<FreewillItem> list = new ArrayList<>();
         list.addAll(readlist);
         for (FreewillItem item:readlist) {
-            if(TimeUtil.isyesterday(item.getTime())){
+            if(TimeUtil.isyesterday(item.getTime()) || item.getTime() > System.currentTimeMillis()){
+                LogUtil.i("remove-"+item);
                 list.remove(item);
             }
         }

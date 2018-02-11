@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:lines="1"
-        android:textColor="#7fffffff"
+        android:textColor="#44ffffff"
         android:gravity="left|center_vertical"
         android:textSize="9dp" />
     <TextView
@@ -21,7 +21,7 @@
         android:layout_weight="1"
         android:gravity="left|center_vertical"
         android:lines="1"
-        android:textColor="#7fffffff"
+        android:textColor="#44ffffff"
         android:textSize="9dp" />
 
 

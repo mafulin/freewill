@@ -54,7 +54,6 @@ public class ClockPerView extends View {
         // TODO Auto-generated method stub
         super.onDraw(canvas);
 
-        Log.i("123","onDraw--");
         /********************************************/
         setBackgroundColor(Color.TRANSPARENT);
 
@@ -209,9 +208,10 @@ public class ClockPerView extends View {
 
                 pmall += percent;
             }
-            Log.i("123","percent--"+percent);
+//            Log.i("123","percent--"+percent);
         }
-
+        Log.i("123","ampers--"+ampers);
+        Log.i("123","pmpers--"+pmpers);
         if(ampers.isEmpty()){
             if(TimeUtil.isAM(System.currentTimeMillis())){
                 ampers.add(new Per(amall,(TimeUtil.beforeseconds(0)*360.0f/Constant.seconds),"#FF888888"));

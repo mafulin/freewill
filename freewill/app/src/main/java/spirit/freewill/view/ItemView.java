@@ -19,7 +19,7 @@ public class ItemView extends View{
 	private float width = Constant.width;
 	private float height = Constant.height;
 	private long durationMillis = 6000;
-	private int type = TypeUtil.TYPE_start;
+	private int type = 0;
 	private String  tag = "";
 	public ItemView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
@@ -56,20 +56,20 @@ public class ItemView extends View{
 		width = measuredWidth;
 		height = measuredHeight;
 
-		switch (type){
-			case TypeUtil.TYPE_start:
-				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width *0.5f,this.height, p);
-				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width,this.height *0.5f, p);
-				break;
-			case TypeUtil.TYPE_end:
-				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width *0.5f,0, p);
-				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width,this.height *0.5f, p);
-				break;
-			default:
-				canvas.drawLine(this.width/2, 0, this.width *0.5f,this.height, p);
-				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width,this.height *0.5f, p);
-				break;
-		}
+//		switch (type){
+//			case TypeUtil.TYPE_start:
+//				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width *0.5f,this.height, p);
+//				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width,this.height *0.5f, p);
+//				break;
+//			case TypeUtil.TYPE_end:
+//				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width *0.5f,0, p);
+//				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width,this.height *0.5f, p);
+//				break;
+//			default:
+//				canvas.drawLine(this.width/2, 0, this.width *0.5f,this.height, p);
+//				canvas.drawLine(this.width*0.5f, this.height *0.5f, this.width,this.height *0.5f, p);
+//				break;
+//		}
 
 
 
