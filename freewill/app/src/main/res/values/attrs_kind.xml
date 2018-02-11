@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="kind">
-        <item >思想</item>
-        <item >情感</item>
-        <item >意志</item>
         <item >正知</item>
         <item >错知</item>
         <item >概念</item>
@@ -22,7 +19,6 @@
         <item >痛苦</item>
         <item >忧郁</item>
         <item >友好</item>
-        <item >仁慈</item>
         <item >快乐</item>
         <item >平等</item>
         <item >幸福</item>
@@ -38,9 +34,6 @@
         <item >愤怒</item>
     </string-array>
     <string-array name="color">
-        <item >#ffff99</item>
-        <item >#ff0099</item>
-        <item >#0000ff</item>
         <item >#00ffff</item>
         <item >#003333</item>
         <item >#ff0066</item>
@@ -59,7 +52,6 @@
         <item >#333333</item>
         <item >#993333</item>
         <item >#66ff66</item>
-        <item >#6666ff</item>
         <item >#ff99cc</item>
         <item >#99ffcc</item>
         <item >#99ff00</item>

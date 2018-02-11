@@ -5,6 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import spirit.freewill.R;
+import spirit.freewill.about.AboutActivity;
 import spirit.freewill.menu.BaseFragment;
 import spirit.freewill.webview.BrowserActivity;
 import spirit.freewill.webview.SonicJavaScriptInterface;
@@ -24,6 +25,7 @@ public class QAFragment extends BaseFragment {
 		findViewById(R.id.t3).setOnClickListener(listener);
 		findViewById(R.id.t4).setOnClickListener(listener);
 		findViewById(R.id.t5).setOnClickListener(listener);
+		findViewById(R.id.t6).setOnClickListener(listener);
 
 	}
 
@@ -33,6 +35,12 @@ public class QAFragment extends BaseFragment {
 	}
 	private String url ;
 	public void click(View v){
+
+		if(v.getId() == R.id.t6){
+			Intent intent = new Intent(getActivity(), AboutActivity.class);
+			startActivity(intent);
+			return;
+		}
 
 		switch (v.getId()){
 			case R.id.t1:
@@ -51,7 +59,8 @@ public class QAFragment extends BaseFragment {
 			case R.id.t5:
 				url = "https://tieba.baidu.com/f?kw=%E5%85%83%E5%90%BE%E6%B0%8F&ie=utf-8";
 				break;
-			case R.id.action:
+			case R.id.t6:
+
 				break;
 		}
 //		Intent intent = new Intent(getActivity(), WebViewActivity.class);
@@ -60,7 +69,7 @@ public class QAFragment extends BaseFragment {
 
 		Intent intent = new Intent(getActivity(), BrowserActivity.class);
 		intent.putExtra(BrowserActivity.PARAM_URL, url);
-		intent.putExtra(BrowserActivity.PARAM_MODE, BrowserActivity.MODE_SONIC);
+		intent.putExtra(BrowserActivity.PARAM_MODE, BrowserActivity.MODE_DEFAULT);
 		intent.putExtra(SonicJavaScriptInterface.PARAM_CLICK_TIME, System.currentTimeMillis());
 		startActivity(intent);
 	}
@@ -71,7 +80,4 @@ public class QAFragment extends BaseFragment {
 			click(v);
 		}
 	};
-	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		return super.onKeyUp(keyCode, event);
-	}
 }

@@ -63,21 +63,6 @@ public class MenuActivity extends AppCompatActivity {
         tabText.setText(name);
         return v;
     }
-	public boolean onKeyUp(int keyCode, KeyEvent event) {
-//		if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            Log.i("123","KEYCODE_BACK--");
-
-            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-            BaseFragment fragmentByTag = (BaseFragment) fragmentManager.findFragmentByTag(tags[mTabHost.getCurrentTab()]);
-            if(fragmentByTag.onKeyUp(keyCode,event)){
-                return true;
-            }else{
-                return super.onKeyUp(keyCode, event);
-            }
-
-//		}
-//		return super.onKeyUp(keyCode, event);
-	}
 }
 
 

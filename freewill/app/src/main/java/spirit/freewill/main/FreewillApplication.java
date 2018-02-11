@@ -4,6 +4,8 @@ import android.app.Application;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.tencent.bugly.Bugly;
+
 import java.util.ArrayList;
 
 import spirit.freewill.R;
@@ -24,10 +26,12 @@ public class FreewillApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initConstant();
-        initConsciousnKindList();
-        TestUtil.makeData();
+        firstStart();
+        Bugly.init(getApplicationContext(), "436f7b9c8b", true);
 
     }
+
+
 
 
     private void initConstant(){
@@ -55,5 +59,12 @@ public class FreewillApplication extends Application {
             consciousnKinds.add(new ConsciousnKind(i,kinds[i],colors[i%colors.length]));
         }
         FileUtil.writeKindList(this,consciousnKinds);
+    }
+
+    /**
+     * 初次启动app时需要初始化的数据
+     */
+    private void firstStart() {
+        initConsciousnKindList();
     }
 }

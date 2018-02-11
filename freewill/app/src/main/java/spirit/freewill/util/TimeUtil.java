@@ -69,7 +69,7 @@ public class TimeUtil {
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.MILLISECOND, 0);
-        LogUtil.i("cal.getTwelve()--"+cal.getTimeInMillis()+"--"+new Date(cal.getTimeInMillis()));
+//        LogUtil.i("cal.getTwelve()--"+cal.getTimeInMillis()+"--"+new Date(cal.getTimeInMillis()));
         return cal.getTimeInMillis();
     }
     public static long leftseconds(long time) {

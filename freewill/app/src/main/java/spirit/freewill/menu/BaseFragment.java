@@ -46,7 +46,4 @@ public abstract class BaseFragment extends Fragment {
 	
 	public abstract void initView();
 	public abstract void initData();
-	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		return false;
-	}
 }
