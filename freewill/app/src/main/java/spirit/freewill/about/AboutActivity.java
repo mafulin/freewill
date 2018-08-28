@@ -30,7 +30,7 @@ public class AboutActivity extends AppCompatActivity {
     private void initview() {
         root = (RelativeLayout) findViewById(R.id.root);
         menu = (RelativeLayout) findViewById(R.id.menu);
-        Beta.checkUpgrade();
+//        Beta.checkUpgrade();
     }
 
 

@@ -18,7 +18,9 @@ import spirit.freewill.util.Constant;
 import spirit.freewill.util.FileUtil;
 import spirit.freewill.util.SPUtil;
 import spirit.freewill.util.TestUtil;
+import spirit.freewill.util.TimeUtil;
 import spirit.freewill.util.TypeUtil;
+import spirit.freewill.view.ClockMapView;
 import spirit.freewill.view.ClockPerView;
 
 
@@ -34,7 +36,7 @@ public class WatchFragment extends BaseFragment {
 	private List<FreewillItem> data = new ArrayList<FreewillItem>();
 	private TrainAdapter trainAdapter;
 	private KindAdapter kindAdapter;
-	private ClockPerView clockper;
+	private ClockMapView clockper;
 
 	@Override
 	public int setContentView() {
@@ -71,7 +73,7 @@ public class WatchFragment extends BaseFragment {
 //		}
 
 
-		clockper = (ClockPerView) findViewById(R.id.clockper);
+		clockper = (ClockMapView) findViewById(R.id.clockper);
 
 		initKind();
 	}

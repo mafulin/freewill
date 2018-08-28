@@ -1,4 +1,4 @@
-package spirit.freewill.number;
+package spirit.freewill.will;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,12 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 
 import spirit.freewill.R;
+import spirit.freewill.number.ThreeView;
 
 /**
  * Created by mafulin on 2017/9/12.
  */
 
-public class ThreeActivity extends AppCompatActivity {
+public class WillActivity extends AppCompatActivity {
 
     private RelativeLayout menu;
     private RelativeLayout root;
@@ -21,7 +22,7 @@ public class ThreeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_three);
+        setContentView(R.layout.activity_will);
         root = (RelativeLayout) findViewById(R.id.root);
         menu = (RelativeLayout) findViewById(R.id.menu);
 //        addChakra1();
@@ -32,8 +33,8 @@ public class ThreeActivity extends AppCompatActivity {
 
 
     public void addBG(){
-        ThreeView threeView = new  ThreeView(ThreeActivity.this);
-        menu.addView(threeView);//
+        WillView willView = new  WillView(WillActivity.this);
+        menu.addView(willView);//
     }
 }
 

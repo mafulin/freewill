@@ -7,8 +7,11 @@ import android.view.View;
 import spirit.freewill.R;
 import spirit.freewill.about.AboutActivity;
 import spirit.freewill.menu.BaseFragment;
+import spirit.freewill.number.MainActivity;
+import spirit.freewill.number.ThreeActivity;
 import spirit.freewill.webview.BrowserActivity;
 import spirit.freewill.webview.SonicJavaScriptInterface;
+import spirit.freewill.will.WillActivity;
 
 
 public class QAFragment extends BaseFragment {
@@ -37,7 +40,8 @@ public class QAFragment extends BaseFragment {
 	public void click(View v){
 
 		if(v.getId() == R.id.t6){
-			Intent intent = new Intent(getActivity(), AboutActivity.class);
+//			Intent intent = new Intent(getActivity(), AboutActivity.class);
+			Intent intent = new Intent(getActivity(), WillActivity.class);
 			startActivity(intent);
 			return;
 		}

@@ -38,8 +38,10 @@ public class FreewillApplication extends Application {
         Constant.context = getApplicationContext();
         WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         Constant.context = getApplicationContext();
-        Constant.height = windowManager.getDefaultDisplay().getHeight()-PXUtil.dip2px(90);
-        Constant.width = windowManager.getDefaultDisplay().getWidth()-PXUtil.dip2px(60);
+        Constant.height = windowManager.getDefaultDisplay().getHeight();
+        Constant.width = windowManager.getDefaultDisplay().getWidth();
+//        Constant.height = windowManager.getDefaultDisplay().getHeight()-PXUtil.dip2px(90);
+//        Constant.width = windowManager.getDefaultDisplay().getWidth()-PXUtil.dip2px(60);
         Log.i("123","height--"+Constant.height);
         Log.i("123","width"+Constant.width);
         int i = PXUtil.px2dip(Constant.width);

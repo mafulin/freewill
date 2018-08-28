@@ -145,6 +145,7 @@
         </LinearLayout>
 
         <TextView
+            android:visibility="gone"
             android:padding="10dp"
             android:text="说明：\n1，因本人时间和能力限制，app肯定有会很多地方需要改正和优化。如在使用过程中，出现任何问题，可以通过二维码添加作者微信反馈,在此先谢。\n2，app目前还处于开发阶段，后续会有更多功能加入，同修们希望app新增的功能也可以给我微信留言。\n3，目前app暂时只有安卓版本，对使用苹果手机的朋友说声抱歉。\n4，最后，谢谢各位的使用！"
             android:layout_width="match_parent"
