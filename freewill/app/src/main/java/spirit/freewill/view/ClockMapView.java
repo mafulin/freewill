@@ -81,8 +81,8 @@ public class ClockMapView extends View {
         for(FreewillItem item:data){
             p.setColor(Color.parseColor(item.getColor()));
             x=width*(item.getTime()-TimeUtil.getZero())*1.0f/(24*60*60*1000);
-            y=height*(1-((item.getTime()-TimeUtil.getZero())%3600000)*1.0f/3600000);
-            canvas.drawCircle(x, y, width/180f, p);
+            y=height*(1-((item.getTime()-TimeUtil.getZero())%900000)*1.0f/900000);
+            canvas.drawCircle(x, y, width/120f, p);
         }
     }
 
