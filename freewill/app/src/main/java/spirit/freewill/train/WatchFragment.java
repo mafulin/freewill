@@ -40,7 +40,7 @@ public class WatchFragment extends BaseFragment {
 
 	@Override
 	public int setContentView() {
-		return R.layout.fragment_watch_test;
+		return R.layout.fragment_watch;
 	}
 
 	@Override

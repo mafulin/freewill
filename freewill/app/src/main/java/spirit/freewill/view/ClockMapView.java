@@ -55,7 +55,8 @@ public class ClockMapView extends View {
 
         Paint p = new Paint();
         p.setAntiAlias(true);
-        p.setStyle(Paint.Style.STROKE);
+//        p.setStyle(Paint.Style.STROKE);
+        p.setStyle(Paint.Style.FILL);
         p.setColor(Color.WHITE);
         p.setStrokeWidth(1f);
         p.setTextSize(PXUtil.dip2px(12));
@@ -65,24 +66,31 @@ public class ClockMapView extends View {
         height = measuredHeight;
         canvas.drawLine(0,height,width,height,p);
         canvas.drawLine(0,0,0,height,p);
+
+        canvas.drawText("24",width*23f/24,height,p);
+        canvas.drawText("0",0,height,p);
+        canvas.drawText("12",width*11.5f/24,height,p);
+
         p.setStrokeWidth(0.3f);
-        for(int i = 0;i<=12;i++){
-            canvas.drawLine(0,height*i/12,width,height*i/12,p);
+        for(int i = 0;i<=24;i++){
+            canvas.drawLine(0,height*i/24,width,height*i/24,p);
         }
         for(int i = 0;i<=24;i++){
             canvas.drawLine(width*i/24,0,width*i/24,height,p);
         }
-        p.setStrokeWidth(0.1f);
-        for(int i = 0;i<=60;i++){
-            canvas.drawLine(0,height*i/60,width,height*i/60,p);
-        }
+//        p.setStrokeWidth(0.1f);
+//        for(int i = 0;i<=60;i++){
+//            canvas.drawLine(0,height*i/60,width,height*i/60,p);
+//        }
         p.setStyle(Paint.Style.FILL);
+        p.setTextSize(PXUtil.dip2px(6));
         Log.i("123","data.size--"+ data.size());
         for(FreewillItem item:data){
             p.setColor(Color.parseColor(item.getColor()));
             x=width*(item.getTime()-TimeUtil.getZero())*1.0f/(24*60*60*1000);
             y=height*(1-((item.getTime()-TimeUtil.getZero())%900000)*1.0f/900000);
-            canvas.drawCircle(x, y, width/120f, p);
+            canvas.drawCircle(x, y, width/144f, p);
+//            canvas.drawText(item.getKind().charAt(0)+"",x-PXUtil.dip2px(3),y+PXUtil.dip2px(3),p);
         }
     }
 

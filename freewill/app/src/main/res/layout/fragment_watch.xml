@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:visibility="gone"
             android:layout_alignParentRight="true"
             android:background="@drawable/bg_border_gray"
             android:id="@+id/list_group"
@@ -20,6 +21,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
+                android:visibility="gone"
                 android:text="编辑"
                 android:gravity="center"
                 android:background="@drawable/bg_border_gray"
@@ -46,8 +48,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
-                <spirit.freewill.view.ClockPerView
-                    android:layout_margin="3dp"
+                <spirit.freewill.view.ClockMapView
                     android:id="@+id/clockper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -69,13 +70,12 @@
                     android:layout_height="80dp"></ListView>
             </RelativeLayout>
             <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:background="#ffffff"-->
-                <!--android:layout_height="1dp"/>-->
-            <LinearLayout
+            <!--android:layout_width="match_parent"-->
+            <!--android:background="#ffffff"-->
+            <!--android:layout_height="1dp"/>-->
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="horizontal"
                 android:layout_weight="1">
                 <ListView
                     android:padding="5dp"
@@ -84,55 +84,174 @@
                     android:stackFromBottom="true"
                     android:transcriptMode="alwaysScroll"
                     android:dividerHeight="0dp"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"></ListView>
                 <LinearLayout
                     android:background="@drawable/bg_border_gray"
                     android:padding="5dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <TextView
-                        android:visibility="gone"
-                        android:layout_margin="20dp"
-                        android:id="@+id/start_end"
-                        android:onClick="click"
-                        android:textColor="#ffffff"
-                        android:gravity="center"
-                        android:textSize="21dp"
-                        android:text="开始"
+                    <LinearLayout
                         android:background="@drawable/bg_border_gray"
-                        android:layout_weight="1"
+                        android:padding="5dp"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp" />
-                    <TextView
-                        android:layout_margin="20dp"
-                        android:background="@drawable/bg_border_gray"
-                        android:id="@+id/silent"
-                        android:onClick="click"
-                        android:textColor="#ffffff"
-                        android:gravity="center"
-                        android:textSize="21dp"
-                        android:text="静"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp" />
-                    <TextView
-                        android:layout_margin="20dp"
-                        android:background="@drawable/bg_border_gray"
-                        android:id="@+id/action"
-                        android:onClick="click"
-                        android:textColor="#ffffff"
-                        android:gravity="center"
-                        android:textSize="21dp"
-                        android:text="动"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp" />
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/will"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="言行"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/physiology"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:padding="5dp"
+                                android:text="生理"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/emotion"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="情感"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/thought"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="思想"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
 
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="0dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/remember"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="记忆"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/wisdom"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="执念"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/peculiarity"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="性格"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <TextView
+                                android:layout_marginLeft="5dp"
+                                android:padding="5dp"
+                                android:background="@drawable/bg_border_gray"
+                                android:id="@+id/inertia"
+                                android:textColor="#88ffffff"
+                                android:gravity="center"
+                                android:textSize="21dp"
+                                android:text="惯性"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:background="@drawable/bg_border_gray"
+                            android:id="@+id/silent"
+                            android:textColor="#ffffff"
+                            android:gravity="center"
+                            android:textSize="21dp"
+                            android:text="静"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:background="@drawable/bg_border_gray"
+                            android:id="@+id/action"
+                            android:textColor="#ffffff"
+                            android:gravity="center"
+                            android:textSize="21dp"
+                            android:text="动"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:id="@+id/all"
+                            android:textColor="#ffffff"
+                            android:gravity="center"
+                            android:textSize="21dp"
+                            android:text="观"
+                            android:background="@drawable/bg_border_gray"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
